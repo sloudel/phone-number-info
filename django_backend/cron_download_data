@@ -1,0 +1,1 @@
+0 0 * * * python3 /app/phone_numbers/services/download.py >> /var/log/download_numbers.log 2>&1

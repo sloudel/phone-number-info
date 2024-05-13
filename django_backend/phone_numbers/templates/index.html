@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Поиск по номеру{% endblock %}
+{% block content_title %}Поиск по номеру{% endblock %}
+
+{% block content %}
+<form action="/phone_numbers/search">
+    <div>Номер телефона</div>
+    <input name="number" placeholder="Например 79001234567"/>
+    <button type="submit">Найти</button>
+</form>
+
+{% if number %}
+<table border="1">
+    <caption>Информация по номеру:</caption>
+    <tr>
+     <th>Номер</th><th>Оператор</th><th>Регион</th>
+    </tr>
+    <tr>
+        <td>{{ number }}</td><td>{{ operator }}</td><td>{{ region }}</td>
+    </tr>
+</table>
+{% endif %}
+{% endblock %}
